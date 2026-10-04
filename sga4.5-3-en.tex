@@ -1,15 +1,12 @@
 % !TEX root = sga4.5-en.tex
-% ENGLISH EDITION -- TRANSLATION STATUS: NOT YET TRANSLATED.
-% This file currently mirrors the French original so that the English
-% PDF (sga4.5-en.tex) always compiles. Translate its body in place;
-% see README.md for the translation workflow.
+% ENGLISH EDITION -- TRANSLATED FROM FRENCH (AI-assisted, needs human review).
 
-\chapter{Fonctions \texorpdfstring{$L$}{L} modulo \texorpdfstring{$\ell^n$}{l n} et modulo \texorpdfstring{$p$}{p}}\label{III}
+\chapter{$L$-functions modulo \texorpdfstring{$\ell^n$}{l n} and modulo \texorpdfstring{$p$}{p}}\label{III}
 
-Dans cet exposé, je prouve une formule analogue au théorème du rapport sur 
-la formule des traces (ce volume; cité ``Rapport'' par la suite) pour un 
-anneau de coefficients $A$ qui soit de torsion premier à $p$, ou un corps de 
-caractéristique $p$. Un usage essentiel sera fait de \cite[XVII 5.5]{sga4}. 
+In this expos\'e, I prove a formula analogous to the ratio theorem on
+the trace formula (this volume; cited ``Rapport'' in what follows) for a
+coefficient ring $A$ which is torsion prime to $p$, or a field of
+characteristic $p$. Essential use will be made of \cite[XVII 5.5]{sga4}.
 
 
 
@@ -20,36 +17,34 @@ caractéristique $p$. Un usage essentiel sera fait de \cite[XVII 5.5]{sga4}.
 
 
 
-\section{Tenseurs symétriques}\label{III:1}
-
+\section{Symmetric tensors}\label{III:1}
 
 
 
 
 \subsection{}\label{III:1-1}
 
-Soit $A$ un anneau commutatif. Pour une liste de propriétés des foncteurs 
-$\Gamma^n:(\text{$A$-modules})\to (\text{$A$-modules})$, je renvoie à 
-\cite[XVII 5.5.1 et 2]{sga4}. Rappelons seulement que pour $M$ plat (en fait, seul 
-le cas où $M$ est projectif de type fini nous intéresse), on a 
+Let $A$ be a commutative ring. For a list of properties of the functors
+$\Gamma^n:(\text{$A$-modules})\to (\text{$A$-modules})$, I refer to
+\cite[XVII 5.5.1 et 2]{sga4}. Let us only recall that for $M$ flat (in fact, only
+the case where $M$ is projective of finite type interests us), one has
 \[
-  \Gamma^n M = \left(M^{\otimes n}\right)^{S_n} \qquad \text{(tenseurs symétriques de degré $n$).}
+  \Gamma^n M = \left(M^{\otimes n}\right)^{S_n} \qquad \text{(symmetric tensors of degree $n$).}
 \]
-
 
 
 
 
 \subsection{}\label{III:1-2}
 
-Soient $X$ un $S$-schéma, $X^n/S$ la puissance fibrée $n$-ième de $X$ et 
-$\pi$ la projection de $X^n/S$ sur $(X^n/S)/S_n=\operatorname{Sym}_S^n(X)$ 
-(supposé exister). Si $\sG$ est un faisceau de $A$-modules sur $X$, le 
-produit tensoriel externe de $n$ copies de $\sG$; $\sG^{\boxtimes n}$, est un 
-faisceau $S_n$-équivariant sur $X^n/S$. Nous aurons à faire usage du 
-foncteur $\Gamma^n$ \emph{externe} de \cite[XVII 5.5.7 à 9]{sga4}. Rappelons 
-seulement que pour $\sG$ un faisceau de $A$-modules plats (en fait, seul le cas 
-constructible et plat nous intéresse), on a 
+Let $X$ be an $S$-scheme, $X^n/S$ the $n$-th fibred power of $X$ and
+$\pi$ the projection from $X^n/S$ onto $(X^n/S)/S_n=\operatorname{Sym}_S^n(X)$
+(assumed to exist). If $\sG$ is a sheaf of $A$-modules on $X$, the
+external tensor product of $n$ copies of $\sG$; $\sG^{\boxtimes n}$, is an
+$S_n$-equivariant sheaf on $X^n/S$. We shall have to make use of the
+\emph{external} functor $\Gamma^n$ of \cite[XVII 5.5.7 \`a 9]{sga4}. Let us only
+recall that for $\sG$ a sheaf of flat $A$-modules (in fact, only the
+constructible and flat case interests us), one has
 \[
   \Gamma_\text{ext}^n(\sG) = \left(\pi_*\sG^{\boxtimes n}\right)^{S_n} \text{.}
 \]
@@ -57,95 +52,90 @@ constructible et plat nous intéresse), on a
 
 
 
-
 \begin{lemma_}\label{III:1-3}
-Pour $S=\spec(k)$, avec $k$ algébriquement clos, $X$ une somme finie de 
-copies de $S$, et $G$ un faisceau plat de $A$-modules sur $X$, on a 
+For $S=\spec(k)$, with $k$ algebraically closed, $X$ a finite sum of
+copies of $S$, and $G$ a flat sheaf of $A$-modules on $X$, one has
 \[
   \Gamma\left(\operatorname{Sym}_S^n(X),\Gamma_\text{ext}(\sG)\right) = \Gamma^n \Gamma(X,\sG)
 \]
 \end{lemma_}
 
-En effet, 
+Indeed,
 \begin{align*}
-  \Gamma\left(\operatorname{Sym}_S^n(X),\Gamma_\text{ext}^n(\sG)\right) 
+  \Gamma\left(\operatorname{Sym}_S^n(X),\Gamma_\text{ext}^n(\sG)\right)
     &= \Gamma\left(\operatorname{Sym}_S^n(X),\pi_*\sG^{\boxtimes n}\right)^{S_n} \\
-    &= \Gamma\left(X^n/S,\sG^{\boxtimes n}\right)^{S_n} 
-    = \left(\Gamma(X,\sG)^{\otimes n}\right)^{S_n} 
+    &= \Gamma\left(X^n/S,\sG^{\boxtimes n}\right)^{S_n}
+    = \left(\Gamma(X,\sG)^{\otimes n}\right)^{S_n}
     = \Gamma^n \Gamma(X,\sG) \text{.}
 \end{align*}
 
 
 
 
-
 \subsection{}\label{III:1-4}
 
-Nous aurons à utiliser les dérivés des foncteurs non additifs $\Gamma^n$ 
-et $\Gamma_\text{ext}^n$. 
+We shall have to use the derived functors of the non-additive functors $\Gamma^n$
+and $\Gamma_\text{ext}^n$.
 
-La théorie de tela foncteurs dérivés est due à Dold et Puppe 
-\cite{do61}. Pour des rappels plus complets que ceux donnés ci-dessous, je 
-renvoie à \cite[XVII 5.5.3]{sga4}. 
+The theory of such derived functors is due to Dold and Puppe
+\cite{do61}. For more complete reminders than those given below, I
+refer to \cite[XVII 5.5.3]{sga4}.
 
-Soit $\cA$ une catégorie abélienne (voire une catégorie additive où 
-tout endomorphisme idempotent soit la projection sur un facteur direct). Notons 
-$N$ le foncteur de normalisation: $N:($complexes cosimpliciaux d'objets de 
-$\cA)\to($complexes différentiables d'objets de $\cA$, avec $K^i$ pour 
-$i<0)$. C'est une équivalence de catégories. Ainsi que son inverse, elle 
-transforme homotopes en morphismes homotopes. Si $\Gamma$ est un foncteur 
-$\cA\to\cB$, et si $K$ est un complexe d'objets de $\cA$, à degrés 
-positifs ($K^i=0$ pour $i<0$), on pose $T K=N T N^{-1} K$. 
-
-
+Let $\cA$ be an abelian category (or even an additive category in which
+every idempotent endomorphism is the projection onto a direct factor). Let
+$N$ denote the normalization functor: $N:($cosimplicial complexes of objects of
+$\cA)\to($differential complexes of objects of $\cA$, with $K^i$ for
+$i<0)$. It is an equivalence of categories. Like its inverse, it
+transforms homotopic morphisms into homotopic morphisms. If $\Gamma$ is a functor
+$\cA\to\cB$, and if $K$ is a complex of objects of $\cA$, in positive
+degrees ($K^i=0$ for $i<0$), one puts $T K=N T N^{-1} K$.
 
 
 
-\subsection{Exemple}\label{III:1-5}
 
-Si $K$ est réduit à $M$ en degré $0$, $T K$ st réduit à $T M$ en 
-degré $0$. 
+\subsection{Example}\label{III:1-5}
 
+If $K$ is reduced to $M$ in degree $0$, $T K$ is reduced to $T M$ in
+degree $0$.
 
 
 
 
 \subsection{}\label{III:1-6}
 
-Si $K$ est un complexe borné, à degrés positifs, de $A$-module projectifs 
-de type fini, le complexe de $A$-modules $\Gamma^n K$ a les mêmes 
-propriétés. 
+If $K$ is a bounded complex, in positive degrees, of projective
+$A$-modules of finite type, the complex of $A$-modules $\Gamma^n K$ has the same
+properties.
 
-Notons $\eD_\text{parf}^{\geqslant 0}(A)$ la sous-catégorie de 
-$\eD_\text{parf}(A)$ (Rapport, \ref{II:4-3}) formée des complexes de 
-tor-dimension $\leqslant 0$. On voit que $\Gamma^n$ induit un foncteur 
+Let $\eD_\text{parf}^{\geqslant 0}(A)$ denote the subcategory of
+$\eD_\text{parf}(A)$ (Rapport, \ref{II:4-3}) formed by complexes of
+tor-dimension $\leqslant 0$. One sees that $\Gamma^n$ induces a functor
 \[
   \eL\Gamma^n : \eD_\text{parf}^{\geqslant 0}(A) \to \eD_\text{parf}^{\geqslant 0}(A) \text{.}
 \]
 
-Pour la définition analogue, mais plus compliquée, de 
-$\eL\Gamma_\text{ext}^n$, je renvoie à \cite[XVII 5.5.14]{sga4}. 
-
+For the analogous, but more complicated, definition of
+$\eL\Gamma_\text{ext}^n$, I refer to \cite[XVII 5.5.14]{sga4}.
 
 
 
 
 \subsection{}\label{III:1-7}
 
-Soient $K$ un complexe borné de $A$-modules projectifs de type fini, et $u$ 
-un endomorphisme de $K$. On note $\det(1-u t,K)$ la série formelle de terme 
-constant $1$ 
+Let $K$ be a bounded complex of projective $A$-modules of finite type, and $u$
+an endomorphism of $K$. We denote by $\det(1-u t,K)$ the formal power series with
+constant term $1$
 \[
   \det(1-u t,K) = \prod_i \det(1-u t,K^i)^{(-1)^i} \text{.}
 \]
 
-On laisse au lecteur la vérification des propriétés suivantes. 
+We leave to the reader the verification of the following properties.
 
 
 \subsubsection{}\label{III:1-7-1}
 
-Soit $F$ une filtration finie stable par $u$, telle que les $\gr_F^p(K^q)$ 
-soient projectifs de type fini. Alors 
+Let $F$ be a finite filtration stable under $u$, such that the $\gr_F^p(K^q)$
+are projective of finite type. Then
 \[
   \det(1-u t,K) = \prod_p \det(1-u t,\gr_F^p(K)) \text{.}
 \]
@@ -153,7 +143,7 @@ soient projectifs de type fini. Alors
 
 \subsubsection{}\label{III:1-7-2}
 
-Si on translate $K$ de $q$ crans vers la gauche, on a 
+If one shifts $K$ by $q$ steps to the left, one has
 \[
   \det(1-u t,K[q]) = \det(1-u t,K)^{(-1)^q} \text{.}
 \]
@@ -161,49 +151,46 @@ Si on translate $K$ de $q$ crans vers la gauche, on a
 
 
 
-
 \begin{proposition_}\label{III:1-8}
-Soit $u$ un endomorphisme d'un complexe borné, à degrés positifs, de 
-$A$-modules projectifs de type fini. On a \
+Let $u$ be an endomorphism of a bounded complex, in positive degrees, of
+projective $A$-modules of finite type. One has \
 \begin{equation*}\tag{1.8.1}\label{III:eq:1-8-1}
   \det(1-u t,K)^{-1} = \sum_n \tr(u,\Gamma^n K) t^n \text{.}
 \end{equation*}
 \end{proposition_}
 
-Notons $D(u,K)$ le second membre de \eqref{III:eq:1-8-1}. 
-
+Let $D(u,K)$ denote the right-hand side of \eqref{III:eq:1-8-1}.
 
 
 
 
 \begin{lemma_}\label{III:1-9}
-Soit $u$ un endomorphisme d'une suite exacte courte de complexes bornés à 
-degrés $\geqslant 0$ de $A$-modules projectifs de type fini 
+Let $u$ be an endomorphism of a short exact sequence of bounded complexes in
+degrees $\geqslant 0$ of projective $A$-modules of finite type
 \[
   0 \to K' \to K \to K'' \to 0 \text{.}
 \]
-On a $D(u,K)=D(u,K')\cdot D(u,K'')$.
+One has $D(u,K)=D(u,K')\cdot D(u,K'')$.
 \end{lemma_}
 
-Si $0\to M'\to M\to M''\to 0$ est une suite exacte courte scindable de 
-$A$-modules, $\Gamma^n M$ a une filtration naturelle, de quotients successifs 
-les $\Gamma^i M'\otimes \Gamma^j M''$ ($i+j=n$). Dès lors, $\Gamma^n K$ admet 
-une filtration naturelle, de quotients successifs les complexes 
-$N(N^{-1} \Gamma^i K'\otimes N^{-1}\Gamma^j K'')$ ($i+j=n$), canoniquement 
-homotopes aux complexes simples $s(\Gamma^i K'\otimes \Gamma^i K'')$ déduit 
-des complexes doubles $\Gamma^i K'\otimes \Gamma^i K''$, et 
+If $0\to M'\to M\to M''\to 0$ is a split short exact sequence of
+$A$-modules, $\Gamma^n M$ has a natural filtration, with successive quotients
+the $\Gamma^i M'\otimes \Gamma^j M''$ ($i+j=n$). Hence, $\Gamma^n K$ admits
+a natural filtration, with successive quotients the complexes
+$N(N^{-1} \Gamma^i K'\otimes N^{-1}\Gamma^j K'')$ ($i+j=n$), canonically
+homotopic to the simple complexes $s(\Gamma^i K'\otimes \Gamma^i K'')$ deduced
+from the double complexes $\Gamma^i K'\otimes \Gamma^i K''$, and
 \[
   \tr(u,\Gamma^n K) = \sum_{i+j=n} \tr(u,\Gamma^i K')\cdot \tr(u,\Gamma^j K'') \text{,}
 \]
-d'où le lemme. De \ref{III:1-9}, on tire par récurrence. 
-
+whence the lemma. From \ref{III:1-9}, one deduces by induction.
 
 
 
 
 \begin{lemma_}\label{III:1-10}
-Soient $F$ une filtration finie stable par $u$ de $K$, telle que les 
-$\gr_F^p(K^q)$ soient projectifs de type fini. Alors, 
+Let $F$ be a finite filtration of $K$ stable under $u$, such that the
+$\gr_F^p(K^q)$ are projective of finite type. Then,
 \[
   D(u,K) = \prod_p D\left(u,\gr_F^p(K)\right) \text{.}
 \]
@@ -212,10 +199,9 @@ $\gr_F^p(K^q)$ soient projectifs de type fini. Alors,
 
 
 
-
 \begin{lemma_}\label{III:1-11}
-Soient $u$ un endomorphisme d'un $A$-module projectif de type fini $M$, et 
-$M[-q]$ le complexe réduit à $M$ en degré $q$. On a 
+Let $u$ be an endomorphism of a projective $A$-module of finite type $M$, and
+$M[-q]$ the complex reduced to $M$ in degree $q$. One has
 \[
   D\left(u,M[-q]\right) = \left(\sum \tr(u,\Gamma^n M) t^n\right)^{(-1)^q} \qquad \text{($q\geqslant 0$.)}
 \]
@@ -224,49 +210,47 @@ $M[-q]$ le complexe réduit à $M$ en degré $q$. On a
 
 
 
-
-D'après \ref{III:1-5}, c'est vrai pour $q=0$. Précédons par récurrence, il 
-reste à montrer que 
+By \ref{III:1-5}, this is true for $q=0$. Proceeding by induction, it
+remains to show that
 \[
   D\left(u,M[-q]\right) \cdot D\left(u,M[-(q+1)]\right) = 1 \text{.}
 \]
-Cette formule résulte de \ref{III:1-9}, appliqué ou complexe $K$ réduit a 
-$M$ en degrés $q$ et $q+1$ (avec $d=\operatorname{id}$), et à sa 
-filtration bête:
+This formula follows from \ref{III:1-9}, applied to the complex $K$ reduced to
+$M$ in degrees $q$ and $q+1$ (with $d=\operatorname{id}$), and to its
+stupid filtration:
 \[
   (\cdots 0 \to M \cdots) \to (\cdots M \to M) \to (\cdots M \to 0 \to 0 \cdots) \text{.}
 \]
-En effet, $K$ est homotope à $0$. Dans la catégorie dérivée, on a donc 
-$\Gamma^n(K)=\Gamma^n(0)$; $0$ pour $n>0$ et $A$ pour $n=0$, et $D(u,K)=1$. 
-
+Indeed, $K$ is homotopic to $0$. In the derived category, one has therefore
+$\Gamma^n(K)=\Gamma^n(0)$; $0$ for $n>0$ and $A$ for $n=0$, and $D(u,K)=1$.
 
 
 
 
 \subsection{}\label{III:1-12}
 
-Prouvons \ref{III:1-8}. D'après \ref{III:1-10} appliqué à la filtration 
-``bête'' de $K$ par les sous-complexes 
+Let us prove \ref{III:1-8}. By \ref{III:1-10} applied to the
+``stupid'' filtration of $K$ by the subcomplexes
 \[
   0 \to \cdots \to 0 \to K^q \to K^{q+1} \to \cdots \text{,}
 \]
-on a 
+one has
 \[
   D(u,K) = \prod_q D\left(u,K^q[-q]\right) =_{\text{(\ref{III:1-10})}} \prod_q \left(\sum \tr\left(u,\Gamma^n(K^q)\right) t^n \right)^{(-1)^q} \text{.}
 \]
-Il reste à prouver que pour $u$ un endomorphisme d'un module projectif de type 
-fini $M$, on a 
+It remains to prove that for $u$ an endomorphism of a projective module of finite
+type $M$, one has
 \begin{equation*}\tag{1.12.1}\label{III:eq:1-12-1}
   \det\left(1-u t,M\right)^{-1} = \sum \tr(u,\Gamma^n M) t^n \text{.}
 \end{equation*}
-Si $u=0$, les deux membres valent $1$. Ajoutant à $M$ un module $N$ sur lequel 
-$u=0$, et appliquent \ref{III:1-9}, on se ramène à supposer que $M$ est libre. 
-Prenons-en un base. Il s'agit alors de prouver des identités algébriques 
-entres les coordonnées de $u$. Le principe de prolongement des identités 
-algébriques nous ramène à supposer que $A$ est un corps algébriquement 
-clos. Le module $M$ admet alors une filtration stable par $u$ à quotients 
-successifs de rang $1$, et \ref{III:1-10} nous ramène au case où $M$ est de 
-rang $1$. La formule \eqref{III:eq:1-12-1} se ramène alors à l'identité 
+If $u=0$, both sides equal $1$. Adding to $M$ a module $N$ on which
+$u=0$, and applying \ref{III:1-9}, we reduce to assuming that $M$ is free.
+Take a basis of it. It is then a matter of proving algebraic identities
+between the coordinates of $u$. The principle of extension of algebraic
+identities reduces us to assuming that $A$ is an algebraically closed
+field. The module $M$ then admits a filtration stable under $u$ with successive
+quotients of rank $1$, and \ref{III:1-10} reduces us to the case where $M$ is of
+rank $1$. Formula \eqref{III:eq:1-12-1} then reduces to the identity
 \[
   \frac{1}{1-a t} = \sum a^n t^n \text{.}
 \]
@@ -274,31 +258,29 @@ rang $1$. La formule \eqref{III:eq:1-12-1} se ramène alors à l'identité
 
 
 
-
 \begin{corollary_}\label{III:1-13}
-Soient $u$ et $u'$ des endomorphismes de complexes bornés $K$ et $K'$ de 
-$A$-modules projectifs de type fini. Si, dans la catégorie dérivée, $K$, 
-muni de $u$, est isomorphe à $K'$, muni de $u'$, alors 
+Let $u$ and $u'$ be endomorphisms of bounded complexes $K$ and $K'$ of
+projective $A$-modules of finite type. If, in the derived category, $K$,
+equipped with $u$, is isomorphic to $K'$, equipped with $u'$, then
 \[
   \det(1-u t,K) = \det(1-u' t,K') \text{.}
 \]
 \end{corollary_}
 
-Appliquent \ref{III:1-7-2}, on se ramène à supposer que $K$ et $K'$ sont à 
-degrés positifs. On observe alors que le second membre de \ref{III:1-8} 
-possède la propriété d'invariance voulue. 
-
+Applying \ref{III:1-7-2}, we reduce to assuming that $K$ and $K'$ are in
+positive degrees. One then observes that the right-hand side of \ref{III:1-8}
+has the required invariance property.
 
 
 
 
 \subsection{}\label{III:1-14}
 
-Ce corollaire permet de définir $\det(1-u t,K)$ pour $u$ un endomorphisme de 
-$K\in \ob\eD_\text{parf}(A)$. Cette construction est ad hoc; en fait, pour $v$ un 
-automorphisme de $L\in\ob\eD_\text{parf}(\Lambda)$, on peut définir 
-$\det(v)\in\Lambda^\times$, et $\det(1-u t,K)$ s'obtient pour $v=1-u t$, 
-$\Lambda=A\llbracket t\rrbracket$ et $L=K\otimes_A\Lambda$. 
+This corollary makes it possible to define $\det(1-u t,K)$ for $u$ an endomorphism of
+$K\in \ob\eD_\text{parf}(A)$. This construction is ad hoc; in fact, for $v$ an
+automorphism of $L\in\ob\eD_\text{parf}(\Lambda)$, one can define
+$\det(v)\in\Lambda^\times$, and $\det(1-u t,K)$ is obtained for $v=1-u t$,
+$\Lambda=A\llbracket t\rrbracket$ and $L=K\otimes_A\Lambda$.
 
 
 
@@ -309,33 +291,31 @@ $\Lambda=A\llbracket t\rrbracket$ et $L=K\otimes_A\Lambda$.
 
 
 
-\section{Le Théorème}\label{III:2}
-
+\section{The Theorem}\label{III:2}
 
 
 
 
 \subsection{}\label{III:2-1}
 
-Reprenons les notations de (Rapport, \S\ref{II:1}). Pour $A$ un anneau 
-noethérien commutatif de torsion, $X_0$ un schéma séparé de type fini sur 
-$\dF_q$ et $\sK_0\in\ob\eD_\text{ctf}(X_0;A)$, on pose 
+Let us resume the notations of (Rapport, \S\ref{II:1}). For $A$ a
+noetherian commutative torsion ring, $X_0$ a separated scheme of finite type over
+$\dF_q$ and $\sK_0\in\ob\eD_\text{ctf}(X_0;A)$, we put
 \[
   L(X_0,\sK_0) = \prod_{x\in |X_0|} \det\left(1-F_x^* t^{\deg(x)}, \sK\right)^{-1}
 \]
-(\ref{III:1-7}, \ref{III:1-13} et Rapport, \ref{II:1-5}, \ref{II:1-6}). 
-
+(\ref{III:1-7}, \ref{III:1-13} et Rapport, \ref{II:1-5}, \ref{II:1-6}).
 
 
 
 
 \begin{theorem_}\label{III:2-2}
-Dans chacun des deux cas suivants
+In each of the following two cases
 \begin{enumerate}[\indent a)]
-  \item $A$ est de torsion première à $p$;
-  \item $A$ est réduit et de caractéristique $p$
+  \item $A$ is torsion prime to $p$;
+  \item $A$ is reduced and of characteristic $p$
 \end{enumerate}
-on a 
+one has
 \begin{equation*}\tag{2.2.1}\label{III:eq:2-2-1}
   L(X_0,\sK_0) = \det\left(1-F^* t^f, \eR\Gamma_c(X,\sK)\right)^{-1} \text{.}
 \end{equation*}
@@ -344,38 +324,36 @@ on a
 
 
 
+\subsection{Remark}\label{III:2-3}
 
-\subsection{Remarque}\label{III:2-3}
-
-Dans le cas a), la méthode de Rapport, \S\ref{II:3} permet de déduire de 
-la formule des traces (Rapport \ref{II:4-10}) que les dérivées logarithmiques 
-des deux membres de \eqref{III:eq:2-2-1} sont égales. L'anneau $A$ étant de 
-torsion, cela ne suffit pas pour prouver \ref{III:2-2}. 
-
+In case a), the method of Rapport, \S\ref{II:3} makes it possible to deduce from
+the trace formula (Rapport \ref{II:4-10}) that the logarithmic derivatives
+of the two sides of \eqref{III:eq:2-2-1} are equal. The ring $A$ being of
+torsion, this does not suffice to prove \ref{III:2-2}.
 
 
 
 
-\subsection{Remarque}\label{III:2-4}
+\subsection{Remark}\label{III:2-4}
 
-Si $A$ est un corps, on a 
+If $A$ is a field, one has
 \[
   L(X_0,\sK_0) = \prod_i L\left(X_0,\underline\h^i(\sK_0)\right)^{(-1)^i}
 \]
-et la suite spectrale 
-$E_2^{p q} = \h_c^p(X,\underline\h^q(\sK))\Rightarrow \h_c^{p+q}(X,\sK)$ montre 
-que 
+and the spectral sequence
+$E_2^{p q} = \h_c^p(X,\underline\h^q(\sK))\Rightarrow \h_c^{p+q}(X,\sK)$ shows
+that
 \begin{align*}
-  \det\left(1-F^* t, \eR\Gamma_c(X,\sK)\right) 
+  \det\left(1-F^* t, \eR\Gamma_c(X,\sK)\right)
     &= \prod_n \det\left(1-F^* t^f,\h_c^n(X,\sK)\right)^{(-1)^n} \\
     &= \prod_{p,q} \det\left(1-F^* t,\h_c^p(X,\underline\h^q(\sK))\right)^{(-1)^{p+1}} \text{.}
 \end{align*}
-Ceci ramène \ref{III:2-2} (pour $A$ un corps) au cas particulier suivant. 
+This reduces \ref{III:2-2} (for $A$ a field) to the following special case.
 
 
 \subsubsection{}\label{III:2-4-1}
 
-Si $\sG_0$ est un faisceau constructible de $A$-espaces vectoriels, on a 
+If $\sG_0$ is a constructible sheaf of $A$-vector spaces, one has
 \[
   L(X_0,\sG_0) = \prod_n \det\left(1-F^* t^f,\h_c^n(X,\sG)\right)^{(-1)^{n+1}} \text{.}
 \]
@@ -383,101 +361,94 @@ Si $\sG_0$ est un faisceau constructible de $A$-espaces vectoriels, on a
 
 
 
+\subsection{Remark}\label{III:2-5}
 
-\subsection{Remarque}\label{III:2-5}
-
-Il est facile de réduire le cas b) à celui où $A$ est un corps (voire 
-même un corps fini) de caractéristique $p$, cf. \ref{III:4-2}. 
-
+It is easy to reduce case b) to that where $A$ is a field (or even
+a finite field) of characteristic $p$, cf. \ref{III:4-2}.
 
 
 
 
-\subsection{Remarque}\label{III:2-6}
+\subsection{Remark}\label{III:2-6}
 
-Le cas particulier de b) où $A=\dZ/p$, et où $X$ est réduit su faisceau 
-constant $\dZ/p$ est degré $0$;
+The special case of b) where $A=\dZ/p$, and where $X$ is reduced to the constant
+sheaf $\dZ/p$ in degree $0$;
 \[
   Z(X_0,t) = \prod_{x\in |X_0|} \left(1-t^{\deg(x)}\right)^{-1}
       \equiv \prod_n \det\left(1-F^* t^f,\h_c^n(X,\dZ/p)\right)^{(-1)^{n+1}} \pmod p
 \]
-avait été prouvé par N. Katz \cite[XXII 3.1]{sga7}. Sa méthode, toute 
-différente de celle suivie ici, part de la théorie $p$-adique de Dwork de 
-$Z(X_0,t)$. 
+had been proved by N. Katz \cite[XXII 3.1]{sga7}. His method, quite
+different from the one followed here, starts from Dwork's $p$-adic theory of
+$Z(X_0,t)$.
 
 
 
 
+\subsection{Remark}\label{III:2-7}
 
-\subsection{Remarque}\label{III:2-7}
 
-
-Contrairement à ce que j'avais imprudemment affirmé à des amis, on ne 
-peut pas dans b) omettre l'hypothèse ``$A$ réduit.'' Pour un contre 
-exemple, cf. \ref{III:4-5}. 
-
+Contrary to what I had imprudently claimed to friends, one cannot
+in b) omit the hypothesis ``$A$ reduced.'' For a counter-
+example, cf. \ref{III:4-5}.
 
 
 
 
-\subsection{Plan de la preuve de \ref{III:2-2}}\label{III:2-8}
+\subsection{Plan of the proof of \ref{III:2-2}}\label{III:2-8}
 
-Une translation sur les degrés \ref{III:1-7-2} nous ramène à supposer 
-que $\sK_0$ est un complexe borné, à degré positifs, de faisceaux de 
-$A$-modules constructibles et plats. On a alors 
-$\eR\Gamma_c(X,\sK)\in \ob\eD_\text{parf}^{\geqslant 0}(A)$ (Rapport, 
-preuve \ref{II:4-9}, b). Nous allons utiliser \ref{III:1-8} pour développer 
-les deux membres de \eqref{III:eq:2-2-1} en série de puissances de $T=t^f$. 
-L'égalité des coefficients de $T^n$ de déduira de 
-\cite[XVII 5.5.21]{sga4} et d'une formule des traces sur 
-$\operatorname{Sym}^n(X)$; dans le cas a), le formule (Rapport, 
-\ref{II:4-10}), et dans le cas b) une formule qui sera prouvée dans le 
-chapitre suivant. Il y a lieu de se ramener au préalable au cas où les 
-puissances symétriques de $X_0$ existent (par exemple au cas où $X$ est 
-affine) à l'aide des propriétés de multiplicativité en $X_0$ des deux 
-membres de \eqref{III:eq:2-2-1}: pour $U_0$ un ouvert de $X_0$, de fermé 
-complémentaire $Y_0$, on a $L(X_0,\sK_0)=L(U_0,\sK_0)\cdot L(Y_0,\sK_0)$ et 
-la formule analogue pour le membre de droite résulte de \ref{III:1-7-1} 
-par la méthode de (Rapport \S\ref{II:6}A). 
-
-
-
-
-
-\subsection{Le cas où $X_0$ est fini}\label{III:2-9}
-
-La multiplicativité en $X_0$ des deux membres de \eqref{III:eq:2-2-1} 
-ramène ce cas à celui où $X_0=\spec(\dF_{q^k})$. Revenant aux 
-définitions, on voit que \eqref{III:eq:2-2-1} équivaut alors à 
-Rapport \ref{II:3-4}. 
+A shift in degrees \ref{III:1-7-2} reduces us to assuming
+that $\sK_0$ is a bounded complex, in positive degrees, of sheaves of
+constructible and flat $A$-modules. One then has
+$\eR\Gamma_c(X,\sK)\in \ob\eD_\text{parf}^{\geqslant 0}(A)$ (Rapport,
+proof \ref{II:4-9}, b). We shall use \ref{III:1-8} to expand
+both sides of \eqref{III:eq:2-2-1} as power series in $T=t^f$.
+Equality of the coefficients of $T^n$ will follow from
+\cite[XVII 5.5.21]{sga4} and from a trace formula on
+$\operatorname{Sym}^n(X)$; in case a), the formula (Rapport,
+\ref{II:4-10}), and in case b) a formula to be proved in the
+next chapter. One should first reduce to the case where the
+symmetric powers of $X_0$ exist (for example to the case where $X$ is
+affine) using the multiplicativity properties in $X_0$ of the two
+sides of \eqref{III:eq:2-2-1}: for $U_0$ an open subset of $X_0$, with closed
+complement $Y_0$, one has $L(X_0,\sK_0)=L(U_0,\sK_0)\cdot L(Y_0,\sK_0)$ and
+the analogous formula for the right-hand side follows from \ref{III:1-7-1}
+by the method of (Rapport \S\ref{II:6}A).
 
 
 
 
+\subsection{The case where $X_0$ is finite}\label{III:2-9}
 
-\subsection{Le premier membre}\label{III:2-10}
+The multiplicativity in $X_0$ of the two sides of \eqref{III:eq:2-2-1}
+reduces this case to that where $X_0=\spec(\dF_{q^k})$. Returning to the
+definitions, one sees that \eqref{III:eq:2-2-1} is then equivalent to
+Rapport \ref{II:3-4}.
 
-D'après \ref{III:1-8}, on a 
+
+
+
+\subsection{The first member}\label{III:2-10}
+
+By \ref{III:1-8}, one has
 \[
   L(X_0,\sK_0) = \prod_{x\in |X_0|} \sum_n \tr\left(F_x^*,\Gamma^n\sK\right) t^{m\deg(x)} \text{.}
 \]
-Le coefficient de $T^n$ est donc la somme, étendue à celles des 
-combinaisons linéaires formelles $\sum_{x\in |X_0|} n_x\cdot x$ 
-($n_x\geqslant 0$, les $n_x$ presque tous nuls) d'éléments de $|X_0|$ 
-telles que $\sum n_x [k(x):\dF_q] = n$, des produits 
+The coefficient of $T^n$ is therefore the sum, extended to those of the
+formal linear combinations $\sum_{x\in |X_0|} n_x\cdot x$
+($n_x\geqslant 0$, almost all $n_x$ zero) of elements of $|X_0|$
+such that $\sum n_x [k(x):\dF_q] = n$, of the products
 \begin{equation*}\tag{2.10.1}\label{III:eq:2-10-1}
   \prod_x \tr\left(F_x^*,\Gamma^{n_x} \sK\right) \text{.}
 \end{equation*}
 
-Pour $x\in |X_0|$, notons $(x)$ le $0$-cycle des $[k(x):\dF_q]$ points de $X$ 
-au-dessus de $x$ (une orbite de $F$). L'application 
-$\sum n_x\mapsto \sum n_x\cdot (x)$ identifie les combinaisons linéaires 
-formelles comme ci-dessus, avec $\sum n_x [k(x):\dF_q]=n$, aux $0$-cycles 
-effectifs de degré $n$ de $X$ fixes sous $F$, soit encore aux points fixes de 
-$F$ dans $\operatorname{Sym}^n(X)$. Le coefficient de $T^n$ dans $L(X_0,\sK_0)$ 
-apparait ainsi comme une somme de produits \eqref{III:eq:2-10-1}, indenée 
-par $\operatorname{Sym}^n(X)^F$. Plus précisément, 
-
+For $x\in |X_0|$, let $(x)$ denote the $0$-cycle of the $[k(x):\dF_q]$ points of $X$
+above $x$ (an orbit of $F$). The map
+$\sum n_x\mapsto \sum n_x\cdot (x)$ identifies the formal linear
+combinations as above, with $\sum n_x [k(x):\dF_q]=n$, with the effective
+$0$-cycles of degree $n$ of $X$ fixed under $F$, i.e.\ with the fixed points of
+$F$ in $\operatorname{Sym}^n(X)$. The coefficient of $T^n$ in $L(X_0,\sK_0)$
+thus appears as a sum of products \eqref{III:eq:2-10-1}, indexed
+by $\operatorname{Sym}^n(X)^F$. More precisely,
 
 
 
@@ -486,34 +457,33 @@ par $\operatorname{Sym}^n(X)^F$. Plus précisément,
  $L(X_0,\sK_0) = \sum_n \sum_{x\in\operatorname{Sym}^n(X)^F} \tr\left(F_x^*,\eL\Gamma_\textnormal{ext}^n \sK\right) T^n$.
 \end{lemma_}
 
-Pour $Y_0$ un sous-schéma fini de plus en plus grand de $X_0$, on a 
+For $Y_0$ a larger and larger finite subscheme of $X_0$, one has
 \[
   L(X_0,\sK_0) = \lim L(Y_0,\sK_0) \text{,}
 \]
-i.e., pour tout $m$, il existe un sous-schéma fini $Z_0\subset X_0$ tel que 
-si $Y_0\supset Z_0$, $L(X_0,\sK_0)$ et $L(Y_0,\sK_0|Y_0)$ soient congrus 
-$\mod T^m$. 
-Il suffit que $Z_0$ contienne les points fermés de degré $\leqslant m$. 
-Le même fait valant pour le membre de droite, il suffit de prouver 
-\ref{III:2-11} pour $X_0$ fini. On a alors 
+i.e., for every $m$, there exists a finite subscheme $Z_0\subset X_0$ such that
+if $Y_0\supset Z_0$, $L(X_0,\sK_0)$ and $L(Y_0,\sK_0|Y_0)$ are congruent
+$\mod T^m$.
+It suffices that $Z_0$ contain the closed points of degree $\leqslant m$.
+The same fact holding for the right-hand side, it suffices to prove
+\ref{III:2-11} for $X_0$ finite. One then has
 \begin{align*}
-  L(X_0,\sK_0) 
+  L(X_0,\sK_0)
     &=_\text{\ref{III:2-9}} \det\left(1-F^* T,\Gamma(X,\sK)\right)^{-1} \\
     &=_\text{\ref{III:1-8}} \sum_n \tr\left(F^*,\Gamma^n \Gamma(X,\sK)\right) T^n \\
     &=_\text{\ref{III:1-3}} \sum_n \tr\left(F^*,\Gamma(\operatorname{Sym}^n(X),\Gamma_\text{ext}^n(\sK)\right) T^n \\
     &= \sum_n \sum_{x\in \operatorname{Sym}^n(X)^F} \tr\left(F_x^*,\Gamma_\text{ext}^n(\sK)\right) T^n
 \end{align*}
-(par la formule des traces dans le cas trivial d'un ensemble fini). 
+(by the trace formula in the trivial case of a finite set).
 
 
 
 
+\subsection{The second member}\label{III:2-12}
 
-\subsection{Le second membre}\label{III:2-12}
-
-D'après \ref{III:1-8} et \cite[XVII 5.5.12]{sga4}, on a 
+By \ref{III:1-8} and \cite[XVII 5.5.12]{sga4}, one has
 \begin{align*}
-  \det\left(1-F^* T,\eR\Gamma_c(X,\sK)\right)^{-1} 
+  \det\left(1-F^* T,\eR\Gamma_c(X,\sK)\right)^{-1}
     &= \sum_n \tr\left(F^*,\eL\Gamma^n\eR\Gamma_c(X,\sK)\right) T^n \\
     &= \sum_n \tr\left(F^*,\eR\Gamma_c(\operatorname{Sym}^n(X),\Gamma_\text{ext}^n\sK)\right) T^n \text{.}
 \end{align*}
@@ -521,15 +491,14 @@ D'après \ref{III:1-8} et \cite[XVII 5.5.12]{sga4}, on a
 
 
 
-
 \subsection{}\label{III:2-13}
 
-Le théorème équivaut donc aux formules des traces 
+The theorem is therefore equivalent to the trace formulas
 \[
   \tr\left(F^*,\eR\Gamma_c(\operatorname{Sym}^n(X,\Gamma_\text{ext}^n \sK)\right) = \sum_{x\in\operatorname{Sym}^n(X)^F} \tr\left(F_x^*,\Gamma_\text{ext}^n\sK\right) \text{.}
 \]
-Dans le cas a), elles résultent de Rapport \ref{II:4-10}. La formule 
-analogue dans le cas b) sera prouvée au \S\ref{III:4}. 
+In case a), they follow from Rapport \ref{II:4-10}. The analogous
+formula in case b) will be proved in \S\ref{III:4}.
 
 
 
@@ -540,203 +509,197 @@ analogue dans le cas b) sera prouvée au \S\ref{III:4}.
 
 
 
-\section{Théorie d'Artin-Scheier}\label{III:3}
-
+\section{Artin-Schreier theory}\label{III:3}
 
 
 
 
 \subsection{}\label{III:3-1}
 
-Dans ce qui suit, un faisceau cohérent sur un schéma $S$ sera toujours 
-regardé comme un faisceau sur $S_\text{ét}$. Soit $S$ un schéma de 
-caractéristique $p>0$. Si $G$ un faisceau localement constant de 
-$\dZ/p$-vectoriels de rang fini, $\sG=G\otimes_{\dZ/p}\sO$ est un faisceau 
-cohérent localement libre sur $S$. On notera $\Phi$ tant l'endomorphisme 
-$f\mapsto f^p$ de $\sO$ que son produit tensoriel avec l'identité de 
-$G$: $\phi:\sG\to\sG$. La théorie d'Artin-Scheier \cite[IX 3.5]{sga4} 
-affirme que la suite 
+In what follows, a coherent sheaf on a scheme $S$ will always be
+regarded as a sheaf on $S_\text{\'et}$. Let $S$ be a scheme of
+characteristic $p>0$. If $G$ is a locally constant sheaf of
+$\dZ/p$-vector spaces of finite rank, $\sG=G\otimes_{\dZ/p}\sO$ is a
+locally free coherent sheaf on $S$. We shall denote by $\Phi$ both the endomorphism
+$f\mapsto f^p$ of $\sO$ and its tensor product with the identity of
+$G$: $\phi:\sG\to\sG$. Artin-Schreier theory \cite[IX 3.5]{sga4}
+asserts that the sequence
 \[\xymatrix{
-  0 \ar[r] 
-    & \dZ/p \ar[r] 
-    & \sO \ar[r]^-{\Phi-1} 
-    & \sO \ar[r] 
+  0 \ar[r]
+    & \dZ/p \ar[r]
+    & \sO \ar[r]^-{\Phi-1}
+    & \sO \ar[r]
     & 0
 }\]
-est exacte. Par tensorisation avec $G$, on trouve un suite exacte 
+is exact. Tensoring with $G$, one finds an exact sequence
 \[\xymatrix{
-  0 \ar[r] 
-    & G \ar[r] 
-    & \sG \ar[r]^-{\Phi-1} 
-    & \sG \ar[r] 
+  0 \ar[r]
+    & G \ar[r]
+    & \sG \ar[r]^-{\Phi-1}
+    & \sG \ar[r]
     & 0
 }\]
-
 
 
 
 
 \subsection{}\label{III:3-2}
 
-Supposons que $S$ soit un ouvert dans un schéma noethérien $\bar S$. 
-Soient $j:S\hookrightarrow \bar S$ le morphisme d'inclusion, et $I$ un 
-faisceau d'idéaux qui définit le fermé complémentaire 
-$\bar S\setminus S$. Notons encore $\Phi$ le prolongement par fonctorialité 
-de $\Phi$ à $j_*\sG$. 
-
+Suppose that $S$ is an open subset in a noetherian scheme $\bar S$.
+Let $j:S\hookrightarrow \bar S$ be the inclusion morphism, and $I$ a
+sheaf of ideals defining the closed complement
+$\bar S\setminus S$. Let us still denote by $\Phi$ the extension by functoriality
+of $\Phi$ to $j_*\sG$.
 
 
 
 
 \begin{lemma_}\label{III:3-3}
-Il existe des prolongements cohérents $\bar\sG\subset j_*\sG$ de $\sG$ tels 
-que 
+There exist coherent extensions $\bar\sG\subset j_*\sG$ of $\sG$ such
+that
 \begin{equation*}\tag{3.3.1}\label{III:eq:3-3-1}
   \Phi(\bar\sG)\subset I\cdot \bar\sG\text{.}
 \end{equation*}
-Si $\bar\sG$ est un tel prolongement, la suite 
+If $\bar\sG$ is such an extension, the sequence
 \begin{equation*}\tag{3.3.2}\label{III:eq:3-3-2}
 \xymatrix{
-  0 \ar[r] 
-    & j_! G \ar[r] 
-    & \bar\sG \ar[r]^-{\Phi-1} 
-    & \bar\sG \ar[r] 
+  0 \ar[r]
+    & j_! G \ar[r]
+    & \bar\sG \ar[r]^-{\Phi-1}
+    & \bar\sG \ar[r]
     & 0
 }
 \end{equation*}
-ext exacte.
+is exact.
 \end{lemma_}
 \begin{enumerate}[a)]
-  \item \emph{Existence}: Soit $\sG'\subset j_*\sG$ un prolongement cohérent 
-    de $\sG$ à $\bar S$. Pour tout $n$, on a 
-    $\Phi(I^n \sG')\subset I^{p^n}\Phi(\sG')$. Soit $n$ assez grand pour 
-    que $I^{n(p-1)-1}\Phi(\sG')\subset \sG'$, et posons $\bar\sG=I^n\sG'$. 
-    On a $\Phi(\bar\sG)\subset I^{p n}\Phi(\sG') 
-    =I\cdot I^n\cdot I^{n(p-1)-1}\Phi(\sG')\subset I\cdot I^n\sG' 
-    = I\bar\sG$. 
-  \item \emph{Noyau de $\Phi-1$}: Sur $S$, l'assertion résulte de 
-    \ref{III:3-1}; il reste à vérifier qu'une section de $x$ de 
-    $\ker(\Phi-1)$, sur $U$ étale sur $\bar S$, s'annule dans un voisinage de 
-    l'image réciproque de $\bar S\setminus S$. Puisque $x=\Phi(x)$, on a en 
-    effet par \eqref{III:eq:3-3-1} $x\in I\bar\sG$; de plus, 
-    $x\in I^n\bar\sG\Rightarrow x=\Phi(x)\in\Phi(I^n\bar\sG)\subset I^{n p}\bar\sG$, et $x$ est dans tous les $I^n\bar\sG$, donc nul au voisinage de 
+  \item \emph{Existence}: Let $\sG'\subset j_*\sG$ be a coherent extension
+    of $\sG$ to $\bar S$. For every $n$, one has
+    $\Phi(I^n \sG')\subset I^{p^n}\Phi(\sG')$. Let $n$ be large enough so
+    that $I^{n(p-1)-1}\Phi(\sG')\subset \sG'$, and put $\bar\sG=I^n\sG'$.
+    One has $\Phi(\bar\sG)\subset I^{p n}\Phi(\sG')
+    =I\cdot I^n\cdot I^{n(p-1)-1}\Phi(\sG')\subset I\cdot I^n\sG'
+    = I\bar\sG$.
+  \item \emph{Kernel of $\Phi-1$}: Over $S$, the assertion follows from
+    \ref{III:3-1}; it remains to check that a section $x$ of
+    $\ker(\Phi-1)$, over $U$ \'etale over $\bar S$, vanishes in a neighbourhood of
+    the inverse image of $\bar S\setminus S$. Since $x=\Phi(x)$, one has in
+    fact by \eqref{III:eq:3-3-1} $x\in I\bar\sG$; moreover,
+    $x\in I^n\bar\sG\Rightarrow x=\Phi(x)\in\Phi(I^n\bar\sG)\subset I^{n p}\bar\sG$, and $x$ lies in all the $I^n\bar\sG$, hence is zero in a neighbourhood of
     $\bar S\setminus S$.
-  \item \emph{Surjectivité de $\Phi-1$}: On peut supposer $\bar S$ affine, en 
-    écrire $\sG$ comme quotient de $\sO^n$; $\Phi$ se relève alors en une 
-    application $p$-linéaire $\widetilde\Phi:\sO^n\to\sO^n$, et il suffit de 
-    vérifier la surjectivité de $\widetilde\Phi-1$:
+  \item \emph{Surjectivity of $\Phi-1$}: One may assume $\bar S$ affine,
+    write $\sG$ as a quotient of $\sO^n$; $\Phi$ then lifts to a
+    $p$-linear map $\widetilde\Phi:\sO^n\to\sO^n$, and it suffices to
+    check surjectivity of $\widetilde\Phi-1$:
     \[\xymatrix{
-      \sO^n \ar[r]^-{\widetilde \Phi-1} \ar[d] 
+      \sO^n \ar[r]^-{\widetilde \Phi-1} \ar[d]
         & \sO^n \ar[d] \\
-      \sG \ar[r]^-{\Phi-1} 
-        & \sG 
+      \sG \ar[r]^-{\Phi-1}
+        & \sG
     }\]
-    Le faisceau $\sO^n$ est le faisceau des sections locales du schéma en 
-    groupes $\dG_a^n$, et $\widetilde\Phi-1$ est induit par un homomorphisme 
-    $\dG_a^n$ dans $\dG_a^n$. Cet homomorphisme est étale. Pour vérifier 
-    qu'il est surjectif, il suffit de le voir après tout changement de base 
-    $\spec(k)\to\bar S$ ($k$ algébriquement clos) et sur $k$ algébriquement 
-    clos, tout homomorphisme étale entre groupes connexes de même dimension 
-    est surjectif. Enfin, un morphisme étale et surjectif de 
-    $\bar S$-schémas induit un épimorphisme entre les faisceaux 
-    correspondant sur $\et{\bar S}$.
+    The sheaf $\sO^n$ is the sheaf of local sections of the group
+    scheme $\dG_a^n$, and $\widetilde\Phi-1$ is induced by a homomorphism
+    of $\dG_a^n$ into $\dG_a^n$. This homomorphism is \'etale. To check
+    that it is surjective, it suffices to see it after any base change
+    $\spec(k)\to\bar S$ ($k$ algebraically closed) and over $k$ algebraically
+    closed, every \'etale homomorphism between connected groups of the same dimension
+    is surjective. Finally, an \'etale surjective morphism of
+    $\bar S$-schemes induces an epimorphism between the corresponding
+    sheaves on $\et{\bar S}$.
 \end{enumerate}
 
 
 
 
+\subsection{Frobenius and Frobenius}\label{III:3-4}
 
-\subsection{Frobenius et Frobenius}\label{III:3-4}
-
-Le morphisme de Frobenius absolu $F_\text{abs}:S\to S$ est l'identité sur 
-l'espace topologique sous-jacent à $S$, et $f\mapsto f^p$ sur le faisceau 
-structural. Pour $U/S$ étale, on a un isomorphisme canonique 
-$F_\text{abs}^* U=U$: le diagramme 
+The absolute Frobenius morphism $F_\text{abs}:S\to S$ is the identity on
+the topological space underlying $S$, and $f\mapsto f^p$ on the structural
+sheaf. For $U/S$ \'etale, one has a canonical isomorphism
+$F_\text{abs}^* U=U$: the diagram
 \[\xymatrix{
-  U \ar[r]^-{F_\text{abs}} \ar[d] 
+  U \ar[r]^-{F_\text{abs}} \ar[d]
     & S \ar[d] \\
-  S \ar[r]^-{F_\text{abs}} 
+  S \ar[r]^-{F_\text{abs}}
     & S
 }\]
-est cartésien. L'endomorphisme de site annelé 
-$(\et{\bar S},\sO)\to(\et{\bar S},\sO)$ défini par $F_\text{abs}$ peut donc 
-être décrit comme suit:
+is cartesian. The endomorphism of ringed site
+$(\et{\bar S},\sO)\to(\et{\bar S},\sO)$ defined by $F_\text{abs}$ can therefore
+be described as follows:
 \begin{center}
-  $F_\text{abs}^*$ est l'identité sur $\et S$; l'homomorphisme 
-  $F_\text{abs}^*\sO=\sO\to\sO$ est $\Phi$.
+  $F_\text{abs}^*$ is the identity on $\et S$; the homomorphism
+  $F_\text{abs}^*\sO=\sO\to\sO$ is $\Phi$.
 \end{center}
-Avec cette description, pour tout faisceau étale $\sG$ sur $S$, la 
-correspondance de Frobenius $F_\text{abs}^*\sG\to\sG$ est l'identité. 
+With this description, for every \'etale sheaf $\sG$ on $S$, the
+Frobenius correspondence $F_\text{abs}^*\sG\to\sG$ is the identity.
 
-Se donner un morphisme $p$-linéaire de faisceaux quasi-cohérents 
-$u:\sM\to\sN$ sur $S$ revient à se donner un morphisme linéaire 
-$u':F_\text{abs}^*\sM\to\sN$. En particulier, avec les notations de 
-\ref{III:3-5}, l'homomorphisme $\Phi:\sG\to\sG$ correspond à 
-$\Phi':F_\text{abs}^*\sG\to\sG$. 
-
+Giving a $p$-linear morphism of quasi-coherent sheaves
+$u:\sM\to\sN$ on $S$ amounts to giving a linear morphism
+$u':F_\text{abs}^*\sM\to\sN$. In particular, with the notations of
+\ref{III:3-5}, the homomorphism $\Phi:\sG\to\sG$ corresponds to
+$\Phi':F_\text{abs}^*\sG\to\sG$.
 
 
 
 
 \begin{lemma_}\label{III:3-5}
-Avec les notations de \ref{III:3-4}, le diagramme 
+With the notations of \ref{III:3-4}, the diagram
 \[\xymatrix{
-  F_\textnormal{abs}^* G \ar[r] \ar[d] 
+  F_\textnormal{abs}^* G \ar[r] \ar[d]
     & G \ar[d] \\
-  F_\textnormal{abs}^*\sG \ar[r]^-{\Phi'} 
-    & \sG 
+  F_\textnormal{abs}^*\sG \ar[r]^-{\Phi'}
+    & \sG
 }\]
-est commutatif.
+is commutative.
 \end{lemma_}
 
-Il suffit de le vérifier localement. On peut donc supposer $G$ constant, 
-auquel cas le lemme est évident. 
+It suffices to check it locally. One may therefore assume $G$ constant,
+in which case the lemma is obvious.
 
-La même théorie vaut pour les puissances de $F_\text{abs}$.
-
+The same theory holds for powers of $F_\text{abs}$.
 
 
 
 
 \subsection{}\label{III:3-6}
 
-Supposons maintenant que $\bar S$ soit un schéma sur $\dF_q$ ($q=p^f$) et 
-conformément aux conventions de Rapport \S\ref{II:1}, écrivons 
-$S_0,\bar S_0,G_0,\sG_0,\bar\sG_0$ au lieu de $S,\dots$. Le lemme 
-\ref{III:3-5}, pour $F_\text{abs}^F:S_0\to S_0$, donne un diagramme commutatif 
+Suppose now that $\bar S$ is a scheme over $\dF_q$ ($q=p^f$) and
+in accordance with the conventions of Rapport \S\ref{II:1}, write
+$S_0,\bar S_0,G_0,\sG_0,\bar\sG_0$ instead of $S,\dots$. Lemma
+\ref{III:3-5}, for $F_\text{abs}^F:S_0\to S_0$, gives a commutative diagram
 \[\xymatrix{
-  F^* G_0 \ar[r] \ar[d] 
+  F^* G_0 \ar[r] \ar[d]
     & G_0 \ar[d] \\
-  F^*\sG_0 \ar[r]^-{(\Phi^f)'} \ar[r] 
-    & \sG_0 
-}\qquad\text{, puis}\qquad 
+  F^*\sG_0 \ar[r]^-{(\Phi^f)'} \ar[r]
+    & \sG_0
+}\qquad\text{, then}\qquad
 \xymatrix{
-  F^*(j_! G_0) \ar[r] \ar[d] 
+  F^*(j_! G_0) \ar[r] \ar[d]
     & j_!G_0 \ar[d] \\
   F^*\bar\sG_0 \ar[r]^-{(\Phi^f)'}
     & \sG_0
 }\text{,}
 \]
-puis, par extension des scalaires de $\dF_q$ à $\dF$ et passage à la 
-cohomologie 
+then, by scalar extension from $\dF_q$ to $\dF$ and passage to
+cohomology
 \[\xymatrix{
-  F^*(j_! G) \ar[r]^-{F_*} \ar[d] 
+  F^*(j_! G) \ar[r]^-{F_*} \ar[d]
     & j_!G \ar[d] \\
   F^*\bar\sG \ar[r]
     & \bar\sG
-}\qquad\text{et}\qquad 
+}\qquad\text{and}\qquad
 \xymatrix{
-  \h^\bullet(\bar S,j_! G) \ar[r]^-{F^*} \ar[d] 
+  \h^\bullet(\bar S,j_! G) \ar[r]^-{F^*} \ar[d]
     & \h^\bullet(\bar S,j_!G) \ar[d] \\
   \h^\bullet(\bar S,\bar\sG) \ar[r]
     & \h^\bullet(\bar S,\bar\sG)
 }\text{,}
 \]
-où la seconde ligne est obtenue par extension des scalaires de $\dF_q$ à 
-$\dF$ de l'endomorphisme $\dF_q$-linéaire $\Phi^f$ de 
-$\h^\bullet(\bar S_0,\bar G_0)$. 
+where the second row is obtained by scalar extension from $\dF_q$ to
+$\dF$ of the $\dF_q$-linear endomorphism $\Phi^f$ of
+$\h^\bullet(\bar S_0,\bar G_0)$.
 
-La théorie d'Artin-Scheier fournit une suite exacte longue 
+Artin-Schreier theory provides a long exact sequence
 \[\xymatrix{
   \cdots \ar[r]
     & \h^i(\bar S,j_! G) \ar[r]
@@ -744,26 +707,25 @@ La théorie d'Artin-Scheier fournit une suite exacte longue
     & \h^i(\bar S,\bar\sG) \ar[r]
     & \cdots
 }\]
-où $\Phi$ est l'extension $p$-linéaire à 
-$\h^\bullet(\bar S,\bar \sG)= \h^\bullet(\bar S_0,\bar\sG_0)\otimes_{\dF_q}\dF$ 
-de l'endomorphisme $p$-linéaire $\Phi$ de $\h^\bullet(\bar S_0,\bar\sG_0)$. 
-
+where $\Phi$ is the $p$-linear extension to
+$\h^\bullet(\bar S,\bar \sG)= \h^\bullet(\bar S_0,\bar\sG_0)\otimes_{\dF_q}\dF$
+of the $p$-linear endomorphism $\Phi$ of $\h^\bullet(\bar S_0,\bar\sG_0)$.
 
 
 
 
 \subsection{}\label{III:3-7}
 
-Si $\bar S_0$ est propre sur $\dF_q$, les $\h^i(\bar S,\bar\sG)$ sont de 
-dimension finie et $\Phi-1$ est surjectif (cf. \ref{III:3-6}b). On a donc 
+If $\bar S_0$ is proper over $\dF_q$, the $\h^i(\bar S,\bar\sG)$ are
+finite-dimensional and $\Phi-1$ is surjective (cf. \ref{III:3-6}b). One has therefore
 \[
   \h_c^i(S,G) = \ker\left(\Phi-1 : \h^i(\bar S,\bar G) \to \h^i(\bar S,\bar\sG)\right) \text{,}
 \]
-et $F^*$ est induit par l'extension $\dF$-linéaire à 
-$\h^i(\bar S,\bar\sG) = \h^i(\bar S_0,\bar\sG_0)\otimes_{\dF_q}\dF$ de 
-l'endomorphisme $\dF_q$-linéaire $\Phi^f$ de $\h^i(\bar S_0m\bar\sG_0)$. 
+and $F^*$ is induced by the $\dF$-linear extension to
+$\h^i(\bar S,\bar\sG) = \h^i(\bar S_0,\bar\sG_0)\otimes_{\dF_q}\dF$ of
+the $\dF_q$-linear endomorphism $\Phi^f$ of $\h^i(\bar S_0m\bar\sG_0)$.
 
-Appliquant le lemme \ref{III:3-8} ci-dessous, on en déduit l'identité 
+Applying Lemma \ref{III:3-8} below, one deduces the identity
 \begin{equation*}\tag{3.7.1}\label{III:eq:3-7-1}
   \tr\left(F^*,\h_c^i(S,G)\right) = \tr\left(\Phi^f,\h^i(\bar S_0,\bar\sG_0)\right) \text{.}
 \end{equation*}
@@ -771,28 +733,27 @@ Appliquant le lemme \ref{III:3-8} ci-dessous, on en déduit l'identité
 
 
 
-
 \begin{lemma_}\label{III:3-8}
-Soit $\Phi$ un endomorphisme $p$-linéaire d'un espace vectoriel $V$ sur 
-$\dF_q$: $\phi(\lambda x) = \lambda^p\phi(x)$. On pose $F=\Phi^f$ ($F$ est 
-linéaire) et on note encore $\Phi$ et $F$ les extensions respectivement 
-$p$-linéaire de $\Phi$ et $F$ à $V\otimes_{\dF_q}\dF$. Alors, $F$ stabilise 
-$\ker(\Phi-1)\subset V\otimes_{\dF_q}\dF$ et 
+Let $\Phi$ be a $p$-linear endomorphism of a vector space $V$ over
+$\dF_q$: $\phi(\lambda x) = \lambda^p\phi(x)$. Put $F=\Phi^f$ ($F$ is
+linear) and still denote by $\Phi$ and $F$ the respectively
+$p$-linear and linear extensions of $\Phi$ and $F$ to $V\otimes_{\dF_q}\dF$. Then, $F$ stabilizes
+$\ker(\Phi-1)\subset V\otimes_{\dF_q}\dF$ and
 \[
   \tr\left(F,\ker(\Phi-1)\right) = \tr(F,V) = \tr\left(F,V\otimes_{\dF_q}\dF\right) \text{.}
 \]
 \end{lemma_}
 
-Sur $V\otimes_{\dF_q}\dF$, on a $F\Phi = \Phi F$: l'endomorphisme $p$-linéaire 
-$F\Phi-\Phi F$ s'annule sur $V$, donc partout. Écrivons $V=V'+V''$, avec $F$ 
-inversible sur $V'$ et nilpotent sur $V''$. La théorie des endomorphismes 
-$p$-linéaires assure que 
+On $V\otimes_{\dF_q}\dF$, one has $F\Phi = \Phi F$: the $p$-linear endomorphism
+$F\Phi-\Phi F$ vanishes on $V$, hence everywhere. Write $V=V'+V''$, with $F$
+invertible on $V'$ and nilpotent on $V''$. The theory of $p$-linear
+endomorphisms ensures that
 \[
   \ker(\Phi-1)\otimes_{\dF_q}\dF \iso V'\otimes_{\dF_q}\dF \text{.}
 \]
-Puisque $\tr(F,V'') = 0$, on a donc 
+Since $\tr(F,V'') = 0$, one has therefore
 \begin{align*}
-  \tr\left(F,\ker(\Phi-1)\right) 
+  \tr\left(F,\ker(\Phi-1)\right)
     &= \tr\left(F,\ker(\Phi-1)\otimes_{\dF_q}\dF\right) = \tr\left(F,V'\otimes_{\dF_q}\dF\right) \\
     &= \tr\left(F,V\otimes_{\dF_q}\dF\right) = \tr(F,V) \text{.}
 \end{align*}
@@ -806,16 +767,15 @@ Puisque $\tr(F,V'') = 0$, on a donc
 
 
 
-\section{Formule des traces modulo \texorpdfstring{$p$}{p}}\label{III:4}
-
+\section{Trace formula modulo \texorpdfstring{$p$}{p}}\label{III:4}
 
 
 
 
 \begin{theorem_}\label{III:4-1}
-Soient $X_0$ un schéma séparé de type fini sur $\dF_q$, $A$ un anneau 
-noethérien commutatif réduit et de caractéristique $p$, et 
-$\sK_0\in\ob\eD_\textnormal{ctf}(X_0,A)$. On a 
+Let $X_0$ be a separated scheme of finite type over $\dF_q$, $A$ a
+commutative noetherian reduced ring of characteristic $p$, and
+$\sK_0\in\ob\eD_\textnormal{ctf}(X_0,A)$. One has
 \begin{equation*}\tag{4.1.1}\label{III:eq:4-1-1}
   \sum_{x\in X^F} \tr\left(F_x^*,\sK_x\right) = \tr\left(F^*,\eR\Gamma_c(X,\sK)\right) \text{.}
 \end{equation*}
@@ -824,156 +784,152 @@ $\sK_0\in\ob\eD_\textnormal{ctf}(X_0,A)$. On a
 
 
 
-
-\subsection{Réduction au cas où \texorpdfstring{$A$}{A} est un corps fini}\label{III:4-2}
+\subsection{Reduction to the case where \texorpdfstring{$A$}{A} is a finite field}\label{III:4-2}
 
 %NOTE: in this paragraph and others, (3.1.1) seems to be referring to (4.1.1)
-Un argument standard de passage à a limite nous ramène au cas où $A$ est 
-de type fini sur $\dZ/p$. Pour chaque idéal maximal $\fm$ de $A$, l'image de 
-chaque membre de \eqref{III:eq:4-1-1} dans $A/\fm$ est donée par la même 
-formule, avec $\sK_0$ remplacé par 
-$\sK_0\lotimes_A A/\fm\in\ob\eD_\text{ctf}(X_0,A/\fm)$ (pour le second membre, 
-cf. Rapport \ref{II:4-12}). Les $A/\fm$ étant finis, et l'intersection des 
-idéaux maximaux de $A$ étant réduit à $0$, on obtient la réduction 
-annoncée.
+A standard limit argument reduces us to the case where $A$ is
+of finite type over $\dZ/p$. For each maximal ideal $\fm$ of $A$, the image of
+each side of \eqref{III:eq:4-1-1} in $A/\fm$ is given by the same
+formula, with $\sK_0$ replaced by
+$\sK_0\lotimes_A A/\fm\in\ob\eD_\text{ctf}(X_0,A/\fm)$ (for the second side,
+cf. Rapport \ref{II:4-12}). The $A/\fm$ being finite, and the intersection of the
+maximal ideals of $A$ being reduced to $0$, one obtains the announced
+reduction.
 
 
 
 
+\subsection{Reduction to the case where \texorpdfstring{$A=\dZ/p$}{A=Z/p}}\label{III:4-3}
 
-\subsection{Réduction au cas où \texorpdfstring{$A=\dZ/p$}{A=Z/p}}\label{III:4-3}
-
-Supposons que $A$ soit un corps fini, et notons $T_A'(\sK_0)$ et $T_A''(\sK_0)$ 
-les deux membres de \eqref{III:eq:4-1-1}. Si, par restriction des scalaires, on 
-regarde $\sK_0$ comme un complexe de faisceaux de $\dZ/p$-modules, on a 
+Suppose that $A$ is a finite field, and denote by $T_A'(\sK_0)$ and $T_A''(\sK_0)$
+the two sides of \eqref{III:eq:4-1-1}. If, by restriction of scalars, one
+regards $\sK_0$ as a complex of sheaves of $\dZ/p$-modules, one has
 \[
   T_{\dZ/p}'(\sK_0) = \tr_{A/(\dZ/p)} T_A'(\sK_0)
 \]
-et de même pour $T''$. Si \eqref{III:eq:4-1-1} vaut pour $A=\dZ/p$, on a donc 
+and similarly for $T''$. If \eqref{III:eq:4-1-1} holds for $A=\dZ/p$, one has therefore
 \begin{equation*}\tag{4.3.1}\label{III:eq:4-3-1}
   \tr_{A/(\dZ/p)} T_A'(\sK_0) = \tr_{A/(\dZ/p)} T_A''(\sK_0) \text{.}
 \end{equation*}
-J'affirme que, pour tout $\lambda\in A$, on a même 
+I claim that, for every $\lambda\in A$, one even has
 \begin{equation*}\tag{4.3.2}\label{III:eq:4-3-2}
   \tr_{A/(\dZ/p)}\left(\lambda\cdot T_A'(\sK_0)\right) = \tr_{A/(\dZ/p)}\left(\lambda\cdot T_A''(\sK_0)\right) \text{,}
 \end{equation*}
-et donc $T_A'(\sK_0) = T_A''(\sK_0)$. C'est clair pour $\lambda=0$. Pour 
-$\lambda$ inversible, notons $A(\lambda)$ l'image réciproque sur $X$ du 
-faisceau de $A$-modules libre de rang un sur $\spec(\dF_q)$ pour lequel 
-$F^*=\lambda$. La formule \eqref{III:eq:4-3-2} n'est autre que 
-\eqref{III:eq:4-3-1} pour $A(\lambda)\otimes_A \sK_0$. 
-
+and hence $T_A'(\sK_0) = T_A''(\sK_0)$. This is clear for $\lambda=0$. For
+$\lambda$ invertible, let $A(\lambda)$ denote the inverse image on $X$ of the
+free rank-one $A$-module sheaf on $\spec(\dF_q)$ for which
+$F^*=\lambda$. Formula \eqref{III:eq:4-3-2} is none other than
+\eqref{III:eq:4-3-1} for $A(\lambda)\otimes_A \sK_0$.
 
 
 
 
 % originally theorem 4.1bis (i.e. theorem 4.1 again)
 \begin{theorem_}\label{III:4-1bis}
-Soient $\bar S_0$ une courbe projective et lisse, 
-$j:S_0\hookrightarrow \bar S_0$ un ouvert dense de $\bar S_0$, et $G_0$ un 
-faisceau localement constant de $\dZ/p$-espaces vectoriels de rang fini sur 
-$S_0$. On a 
+Let $\bar S_0$ be a smooth projective curve,
+$j:S_0\hookrightarrow \bar S_0$ a dense open subset of $\bar S_0$, and $G_0$ a
+locally constant sheaf of finite-rank $\dZ/p$-vector spaces on
+$S_0$. One has
 \begin{equation*}\tag{4.4.1}\label{III:eq:4-4-1}
   \sum_{x\in S^F} \tr\left(F_x^*,G_x\right) = \sum_i (-1)^i \tr\left(F^*,\h_c^i(S,G)\right) \text{.}
 \end{equation*}
 \end{theorem_}
 \begin{proof}
-Appliquons \ref{III:3-3} à $(S_0,\bar S_0,G_0)$. Le prolongement cohérent 
-$\bar\sG_0$ de $\sG_0$ dont \ref{III:3-3} garantit l'existence est localement 
-libre car il est sans torsion (on  $\bar\sG_0\subset j_*\sG_0$) et que 
-$\bar S_0$  est régulier de dimension un. L'endomorphisme $q$-linéaire 
-$\Phi^f$ de $\bar\sG_0$ peut s'interpréter comme un morphisme 
+Apply \ref{III:3-3} to $(S_0,\bar S_0,G_0)$. The coherent extension
+$\bar\sG_0$ of $\sG_0$ whose existence \ref{III:3-3} guarantees is locally
+free because it is torsion-free (since $\bar\sG_0\subset j_*\sG_0$) and
+$\bar S_0$ is regular of dimension one. The $q$-linear endomorphism
+$\Phi^f$ of $\bar\sG_0$ can be interpreted as a morphism
 \[
   u : F^*\bar\sG_0 \to \bar\sG_0 \text{.}
 \]
-Il se factorise par $I\bar G$, pour $I$ définissant le fermé 
-$\bar S\setminus S$. Soit $v:j_!G_0 \to \bar\sG_0$ l'unique prolongement de 
-l'application naturelle $G_0 \to \sG_0 = G_0\otimes_{\dZ/p}\sO$. Le diagramme 
+It factors through $I\bar G$, for $I$ defining the closed subset
+$\bar S\setminus S$. Let $v:j_!G_0 \to \bar\sG_0$ be the unique extension of
+the natural map $G_0 \to \sG_0 = G_0\otimes_{\dZ/p}\sO$. The diagram
 \begin{equation*}\tag{4.4.2}\label{III:eq:4-4-2}
 \xymatrix{
-  F^* j_! G_0 \ar[r]^-{F^*} \ar[d]^-{F^* v} 
+  F^* j_! G_0 \ar[r]^-{F^*} \ar[d]^-{F^* v}
     & j_! G_0 \ar[d]^-v \\
-  F^*\bar \sG_0 \ar[r]^-u 
+  F^*\bar \sG_0 \ar[r]^-u
     & \bar\sG_0
 }
 \end{equation*}
-Enfin, notons $u F^*$ l'application composée 
+Finally, let $u F^*$ denote the composite map
 \[\xymatrix{
-  \h^\bullet(\bar S,\bar\sG) \ar[r]^-{F^*} 
-    & \h^\bullet(\bar S,F^*\bar\sG) \ar[r]^-u 
+  \h^\bullet(\bar S,\bar\sG) \ar[r]^-{F^*}
+    & \h^\bullet(\bar S,F^*\bar\sG) \ar[r]^-u
     & \h^\bullet(\bar S,\bar\sG) \text{,}
 }\]
-on par \eqref{III:eq:3-7-1}
+one has by \eqref{III:eq:3-7-1}
 \begin{equation*}\tag{4.4.3}\label{III:eq:4-4-3}
   \tr\left(F^*,\h_c^i(S,G)\right) = \tr\left(u F^*,\h^i(\bar S,\bar\sG)\right) \text{.}
 \end{equation*}
 
 %NOTE: trace down reference for Woodshole seminar
-Pour chaque point fermé $i_x:x\hookrightarrow \bar  S$ de $\bar S$, posons 
-$\bar\sG_x = i_x^*\bar\sG$. La formule des traces de Lefschetz en cohomologie 
-cohérente (``Woodshole fixed point formula''), appliqué à $F$ et $u$, dit 
-que 
+For each closed point $i_x:x\hookrightarrow \bar  S$ of $\bar S$, put
+$\bar\sG_x = i_x^*\bar\sG$. The Lefschetz trace formula in coherent
+cohomology (``Woodshole fixed point formula''), applied to $F$ and $u$, says
+that
 \begin{equation*}\tag{4.4.4}\label{III:eq:4-4-4}
   \sum_i (-1)^i \tr\left(u^* F^*, \h^i(\bar S,\bar\sG)\right) = \sum_{x\in \bar S^F} \frac{\tr(u_x,\sG_x)}{\det(1-d F_x)} \text{.}
 \end{equation*}
-Au second membre
+On the right-hand side
 \begin{enumerate}[\indent a)]
-  \item puisque $d F=0$, les dénominateurs valent 1;
-  \item pour $x\in \bar S^F\setminus S^F$, l'endomorphisme $u_x$ de $\bar\sG_x$ 
-    est nul, donc aussi $\tr(u_x,\bar\sG_x)$;
-  \item pour $x\in S^F$, \eqref{III:eq:4-4-4} fournit une contribution 
+  \item since $d F=0$, the denominators are $1$;
+  \item for $x\in \bar S^F\setminus S^F$, the endomorphism $u_x$ of $\bar\sG_x$
+    is zero, hence so is $\tr(u_x,\bar\sG_x)$;
+  \item for $x\in S^F$, \eqref{III:eq:4-4-4} provides a contribution
     \[
       \tr(u_x,\bar\sG_x) = \tr(F_x^*,G_x) \text{.}
     \]
-    L'identité \eqref{III:eq:4-4-1} résulte donc de \eqref{III:eq:4-4-3} 
-    et \eqref{III:eq:4-4-4}. 
+    Identity \eqref{III:eq:4-4-1} therefore follows from \eqref{III:eq:4-4-3}
+    and \eqref{III:eq:4-4-4}.
 \end{enumerate}
 \end{proof}
 
 
 
 
+\subsection{A counterexample}\label{III:4-5}
 
-\subsection{Un contre-exemple}\label{III:4-5}
+We show by an example that one cannot, in \ref{III:4-1}, omit
+the hypothesis that $A$ be reduced.
 
-On montre par un exemple qu'on ne peut pas, dans \ref{III:4-1}, omettre 
-l'hypothèse que $A$ soit réduit.
-
-Soit $Y_0$ la courbe elliptique sur $\dF_2$ pour laquelle les valeurs propres 
-de Frobenius sont $\pm \sqrt{-2}$. Elle a $3$ points rationnels, et est 
-supersingulière. L'involution $\sigma:x\mapsto -x$ n'a donc qu'un seul point 
-fixe, le point $0$. Le quotient de $Y_0$ par $\sigma$ est un droite projective; 
-celui de $Y_0\setminus 0$ par $\sigma$ est donc une droite affine $\dF_0^1$, et 
-$Y_0\setminus 0$ est un revêtement double non ramifié de $\dF_0^1$:
+Let $Y_0$ be the elliptic curve over $\dF_2$ for which the Frobenius
+eigenvalues are $\pm \sqrt{-2}$. It has $3$ rational points, and is
+supersingular. The involution $\sigma:x\mapsto -x$ has therefore only one fixed
+point, the point $0$. The quotient of $Y_0$ by $\sigma$ is a projective line;
+that of $Y_0\setminus 0$ by $\sigma$ is therefore an affine line $\dF_0^1$, and
+$Y_0\setminus 0$ is an unramified double covering of $\dF_0^1$:
 \[
   \pi:Y_0\setminus 0 \to \dA_0^1 \qquad \text{, $\pi=\pi\sigma$.}
 \]
 
-Le faisceau $\pi_*\dZ/2$ est un module libre de rang un sur l'algèbre $A$ du 
-groupe à deux éléments $\{1,\sigma\}$ sur $\dZ/2$. Cette algèbre est 
-isomorphe à celle des nombres sur $\dZ/2$. 
+The sheaf $\pi_*\dZ/2$ is a free module of rank one over the algebra $A$ of
+the two-element group $\{1,\sigma\}$ over $\dZ/2$. This algebra is
+isomorphic to that of dual numbers over $\dZ/2$.
 
-Le faisceau de $A$-modules $\pi_*\dZ/2$ est notre exemple:
+The sheaf of $A$-modules $\pi_*\dZ/2$ is our example:
 \begin{enumerate}[\indent a)]
-  \item On a 
-    $\h_c^\bullet(\dA^1,\pi_*\dZ/2) = \h_c^\bullet(Y\setminus 0,\dZ/2)$. 
-    Puisque $Y_0$ est supersingulière, on a $\h^i(Y,\dZ/2)=0$ pour $i>0$, et 
-    la suite exacte longue 
+  \item One has
+    $\h_c^\bullet(\dA^1,\pi_*\dZ/2) = \h_c^\bullet(Y\setminus 0,\dZ/2)$.
+    Since $Y_0$ is supersingular, one has $\h^i(Y,\dZ/2)=0$ for $i>0$, and
+    the long exact sequence
     \[
       \cdots \to \h_c^i(Y\setminus 0,\dZ/2) \to \h^i(Y,\dZ/2) \to \h^i(\{0\},\dZ/2) \to \cdots
     \]
-    montre que $\h_c^\bullet(Y\setminus 0,\dZ/2)=0$. On a donc 
-    $\h_c^\bullet(\dA^1,\pi_*\dZ/2)=0$ et 
+    shows that $\h_c^\bullet(Y\setminus 0,\dZ/2)=0$. One has therefore
+    $\h_c^\bullet(\dA^1,\pi_*\dZ/2)=0$ and
     \[
       \tr_A\left(F^*,\eR\Gamma_c(\dA^1,\pi_*\dZ/2)\right) = 0 \text{.}
     \]
-  \item Puisque $Y_0\setminus 0$ a deux points rationnels, en l'un des points 
-    rationnels de $\dA_1^0$, la substitution de Frobenius est l'identité, et 
-    en l'autre, c'est $\sigma$. On a donc 
+  \item Since $Y_0\setminus 0$ has two rational points, at one of the
+    rational points of $\dA_1^0$, Frobenius substitution is the identity, and
+    at the other, it is $\sigma$. One has therefore
     \[
       \sum_{x\in {\dA^1}^F} \tr\left(F^*,\pi_*\dZ/2\right) = 1+\sigma \text{,}
     \]
-    et $1+\sigma\ne 0$.
+    and $1+\sigma\ne 0$.
 \end{enumerate}
 
-L'équation du revêtement $\pi$ est $y^2-y=x^3$.
+The equation of the covering $\pi$ is $y^2-y=x^3$.
