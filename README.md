@@ -15,7 +15,7 @@ on every push to `master` and hosted on GitHub Pages:
 | Edition | PDF |
 |---|---|
 | Français (original) | [sga4.5.pdf](https://winstoncheong.github.io/sga4.5/sga4.5.pdf) |
-| English (translation in progress) | [sga4.5-en.pdf](https://winstoncheong.github.io/sga4.5/sga4.5-en.pdf) |
+| English (AI-assisted translation in progress, orchestrated by the maintainer) | [sga4.5-en.pdf](https://winstoncheong.github.io/sga4.5/sga4.5-en.pdf) |
 
 Tagged versions (`v*`) also attach both PDFs to the corresponding
 [GitHub Release](https://github.com/winstoncheong/sga4.5/releases).
