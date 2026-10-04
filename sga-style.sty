@@ -1,10 +1,22 @@
 % !TEX root = sga4.5.tex
 
+% Language support: French (original) by default, English on request.
+% French original: \usepackage{sga-style}
+% English edition: \usepackage[english]{sga-style}
+\newif\ifsga@english
+\sga@englishfalse
+\DeclareOption{english}{\sga@englishtrue}
+\DeclareOption{french}{\sga@englishfalse}
+\ProcessOptions\relax
+
 \usepackage[T1]{fontenc}
 \usepackage{calligra}
 \usepackage[utf8]{inputenc} % allows French characters
 \usepackage[all]{xy}        % commutative diagrams
 \usepackage[stable,symbol]{footmisc}
+\ifsga@english
+  \usepackage[english]{babel} % English hyphenation for the translated edition
+\fi
 
 \ifdefined\sgaoption 
   \ifnum\sgaoption=1 % tablet version
@@ -97,12 +109,29 @@
 
 
 % theorem types
+\ifsga@english
+  \newtheorem{proposition}[subsubsection]{Proposition}
+  \newtheorem{corollary}[subsubsection]{Corollary}
+  \newtheorem{definition}[subsubsection]{Definition}
+  \newtheorem{theorem}[subsubsection]{Theorem}
+  \newtheorem{lemma}[subsubsection]{Lemma}
+
+  \newtheorem{lemma_}[subsection]{Lemma}
+  \newtheorem{corollary_}[subsection]{Corollary}
+  \newtheorem{theorem_}[subsection]{Theorem}
+  \newtheorem{proposition_}[subsection]{Proposition}
+  \newtheorem{definition_}[subsection]{Definition}
+  \newtheorem{prop-def_}[subsection]{Proposition-definition}
+  \setcounter{tocdepth}{1}
+
+  \newtheorem*{theorem*}{Theorem}
+\else
   \newtheorem{proposition}[subsubsection]{Proposition}
   \newtheorem{corollary}[subsubsection]{Corollaire}
   \newtheorem{definition}[subsubsection]{Définition}
   \newtheorem{theorem}[subsubsection]{Théorème}
   \newtheorem{lemma}[subsubsection]{Lemme}
-  
+
   \newtheorem{lemma_}[subsection]{Lemme}
   \newtheorem{corollary_}[subsection]{Corollaire}
   \newtheorem{theorem_}[subsection]{Théorème}
@@ -112,6 +141,7 @@
   \setcounter{tocdepth}{1}
 
   \newtheorem*{theorem*}{Théorème}
+\fi
 
 
 %\renewcommand*\thechapter{\Roman{chapter}}

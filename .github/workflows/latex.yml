@@ -1,0 +1,67 @@
+name: Build LaTeX PDFs
+
+# Compiles the French original (sga4.5.tex) and the English edition
+# (sga4.5-en.tex) on every push / PR. On pushes to master the PDFs are
+# published to GitHub Pages; on version tags (v*) they are attached to a
+# GitHub Release.
+on:
+  push:
+    branches: [master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write # needed for gh-pages deployment and releases
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile French edition (sga4.5.pdf)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: sga4.5.tex
+          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Compile English edition (sga4.5-en.pdf)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: sga4.5-en.tex
+          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Upload PDFs as build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: |
+            sga4.5.pdf
+            sga4.5-en.pdf
+          if-no-files-found: error
+
+      - name: Prepare Pages site
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: |
+          mkdir -p public
+          cp sga4.5.pdf public/sga4.5.pdf
+          cp sga4.5-en.pdf public/sga4.5-en.pdf
+          cp site/index.html public/index.html
+
+      - name: Deploy PDFs to GitHub Pages
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+
+      - name: Attach PDFs to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            sga4.5.pdf
+            sga4.5-en.pdf

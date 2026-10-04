@@ -15,3 +15,7 @@ $RECYCLE.BIN/
 *.toc
 *.pdf
 *.log
+*.fdb_latexmk
+*.fls
+*.dvi
+*.ps
