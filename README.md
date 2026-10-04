@@ -15,7 +15,7 @@ on every push to `master` and hosted on GitHub Pages:
 | Edition | PDF |
 |---|---|
 | Français (original) | [sga4.5.pdf](https://winstoncheong.github.io/sga4.5/sga4.5.pdf) |
-| English (AI-assisted translation in progress, orchestrated by the maintainer) | [sga4.5-en.pdf](https://winstoncheong.github.io/sga4.5/sga4.5-en.pdf) |
+| English (AI-assisted translation) | [sga4.5-en.pdf](https://winstoncheong.github.io/sga4.5/sga4.5-en.pdf) |
 
 Tagged versions (`v*`) also attach both PDFs to the corresponding
 [GitHub Release](https://github.com/winstoncheong/sga4.5/releases).
@@ -45,13 +45,17 @@ The French build should complete without warnings. Generated files
 | `sga-sources.bib` | Shared bibliography |
 | `site/index.html` | Landing page deployed to GitHub Pages alongside the PDFs |
 
-## 🌍 Contributing to the English translation
+## 🌍 The English translation
 
-1. Pick an untranslated chapter: its `-en` file still carries the
-   `NOT YET TRANSLATED` banner and mirrors the French text.
-2. Translate its body in place and remove the banner.
-3. Check it compiles: `latexmk sga4.5-en.tex`.
-4. Open a pull request — CI builds both PDFs so reviewers can compare.
+The English edition is complete: every chapter has been translated from the
+French original with AI assistance, orchestrated by the maintainer. It has
+not yet been fully proofread by a mathematician — corrections and
+improvements are very welcome:
+
+1. Edit the relevant `sga4.5-N-en.tex` file in place (never the French
+   `sga4.5-N.tex` original).
+2. Check it compiles: `latexmk sga4.5-en.tex`.
+3. Open a pull request — CI builds both PDFs so reviewers can compare.
 
 Please keep the `\label`s unchanged so cross-references stay aligned
 between the two editions.
